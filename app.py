@@ -1,9 +1,7 @@
 from flask import Flask
 import os
 
-
 app = Flask(__name__)
-
 
 @app.get("/")
 def home():
@@ -11,11 +9,9 @@ def home():
         "message": "Test docker security and wsl",
     }
 
-
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5000"))
